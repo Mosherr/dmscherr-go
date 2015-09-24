@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{.Title}}</title>
+    <link href="/resources/stylesheets/main.css" rel="stylesheet">
+    <link href="/resources/stylesheets/jquery-ui.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>{{.Title}}</h1>
+
+<div id="tabs">
+    <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="resume">Resume</a></li>
+        <li><a href="portfolio">Portfolio</a></li>
+    </ul>
+</div>
+
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $( "#tabs" ).tabs({
+            beforeLoad: function( event, ui ) {
+                ui.jqXHR.error(function() {
+                    ui.panel.html(
+                            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+                            "If this wouldn't be a demo." );
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

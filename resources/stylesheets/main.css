@@ -1,0 +1,16 @@
+body {
+    background: #222;
+    padding: 1em;
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+}
+body * {
+    margin: 10px;
+    padding: 10px;
+    font-family: helvetica, sans-serif;
+}
+p {
+    margin: 0 0 1em;
+    font-size: 14px;
+}
